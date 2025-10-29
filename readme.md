@@ -24,7 +24,11 @@ To install Rivet, follow these steps:
 
 3. Copy the production environment file:
    ```bash
-   cp .env.example .env
+   cp .env.example.development .env # For production, use .env.example.production
+   ```
+
+   Then, generate the application key:
+   ```bash
    php ./artisan key:generate
    ```
 
