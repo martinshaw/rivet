@@ -33,6 +33,8 @@ To install Rivet, follow these steps:
    cd your-project-name
    ```
 
+   ... with `your-project-name` replaced with your desired application name.
+
 2. Install the dependencies:
    ```bash
    composer install
