@@ -22,7 +22,7 @@ To install Rivet, follow these steps:
    npm install
    ```
 
-3. Copy the production environment file:
+3. Copy the development or production environment file:
    ```bash
    cp .env.example.development .env # For production, use .env.example.production
    ```
