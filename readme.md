@@ -4,7 +4,7 @@ Pages - Forms - Articles; a simple yet powerful free self-hostable CMS platform
 
 ## More information
 
-For more information about Rivet, please refer to the [documentation](https://rivet.martinshaw.co).
+For more information about Rivet, please refer to the ~~[documentation](https://rivet.martinshaw.co)~~ coming soon.
 
 ## Installation
 
