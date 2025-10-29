@@ -1,13 +1,14 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/livewire-starter-kit",
+    "name": "martinshaw/rivet",
     "type": "project",
-    "description": "The official Laravel starter kit for Livewire.",
+    "description": "Pages - Forms - Articles; a simple yet powerful free self-hostable CMS platform",
     "keywords": [
         "laravel",
-        "framework"
+        "framework",
+        "cms",
+        "content"
     ],
-    "license": "MIT",
     "require": {
         "php": "^8.2",
         "laravel/fortify": "^1.30",
