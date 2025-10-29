@@ -10,10 +10,27 @@ For more information about Rivet, please refer to the ~~[documentation](https://
 
 To install Rivet, follow these steps:
 
+0. Install the required software:
+   - PHP 8.1 or higher with the following extensions: BCMath, Ctype, Fileinfo, JSON, Mbstring, OpenSSL, PDO, Tokenizer, XML, GD, Curl and PHPRedis.
+   - Composer
+   - Node.js and npm
+   - A database server (MySQL, PostgreSQL, SQLite, etc.)
+   - A web server (Apache, Nginx, etc.)
+   - Redis server
+
+   If you are installing Rivet on your local machine for development purposes, I would recommend that you use [Laravel Herd](https://herd.laravel.com/) with [DBngin](https://dbngin.com) to manage these components of your local development environment.
+
+   If you are installing Rivet on a production server, I would recommend that you use a service like [Laravel Forge](https://forge.laravel.com) to manage your server and deployment, or contact a specialist to help you set up these components securely.
+
 1. Clone the repository:
    ```bash
    git clone https://github.com/martinshaw/rivet.git
-   cd rivet
+   ```
+
+2. Change the project directory name to your desired application name:
+   ```bash
+   mv rivet your-project-name
+   cd your-project-name
    ```
 
 2. Install the dependencies:
@@ -24,7 +41,7 @@ To install Rivet, follow these steps:
 
 3. Copy the development or production environment file:
    ```bash
-   cp .env.example.development .env # For production, use .env.example.production
+   cp .env.example.production .env # For development, use .env.example.development
    ```
 
    Then, generate the application key:
@@ -34,10 +51,32 @@ To install Rivet, follow these steps:
 
    In the future, this will be replaced with a CLI installation wizard `php ./artisan rivet:configure`
 
-4. Build the project:
+4. Migrate and seed the database:
    ```bash
-   npm run build # This creates the production JavaScript assets
-   composer run production # This runs the queue worker, scheduler, and other daemons... 
+   php ./artisan migrate --seed
    ```
 
-   For development, you can use `composer run dev` instead which also runs `npm run dev`
+   You will need to press enter to select the option to create the database when prompted.
+
+4. Build the frontend assets:
+   ```bash
+   npm run build
+   ```
+
+5. Run daemon processes:
+   ```bash
+   composer run production # For development, use `composer run dev`
+   ```
+
+6. Setup scheduler cron job:
+   When developing Rivet, the `composer run dev` command will run the Laravel scheduler in a separate process (skip this step). However, in production, you will need to set up a cron job to run the scheduler.
+
+   Finally, to ensure that scheduled tasks are run, you will need to set up a cron job on your server that runs the Laravel scheduler every minute. You can do this by adding the following line to your server's crontab file using `crontab -e`:
+
+   ```bash
+   * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+   ```
+
+   ... with `/path-to-your-project` replaced with the actual path to your Rivet installation.
+
+   To exit the crontab editor (if vim), you may need to press `Esc`, then type `:wq` and press `Enter`. 
