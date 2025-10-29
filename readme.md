@@ -73,7 +73,7 @@ To install Rivet, follow these steps:
 6. Setup scheduler cron job:
    When developing Rivet, the `composer run dev` command will run the Laravel scheduler in a separate process (skip this step). However, in production, you will need to set up a cron job to run the scheduler.
 
-   Finally, to ensure that scheduled tasks are run, you will need to set up a cron job on your server that runs the Laravel scheduler every minute. You can do this by adding the following line to your server's crontab file using `crontab -e`:
+   You can do this by adding the following line to your server's crontab file using `crontab -e`:
 
    ```bash
    * * * * * cd /your-project-name && php artisan schedule:run >> /dev/null 2>&1
