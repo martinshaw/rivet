@@ -1,0 +1,44 @@
+# Package manager assets
+/node_modules
+/vendor
+
+# Laravel specific files and directories
+/bootstrap/cache/*.php
+/public/build
+/public/hot
+/public/storage
+/storage/*.key
+/storage/pail
+
+# Environment variables and sensitive files
+.env
+.env.backup
+.env.production
+
+# Cache files
+/.phpunit.cache
+.phpactor.json
+.phpunit.result.cache
+
+# Homestead files
+Homestead.json
+Homestead.yaml
+
+# Log files
+/storage/logs/*.log
+npm-debug.log
+yarn-error.log
+
+# Composer auth file
+/auth.json
+
+# IDEs and editors
+/.fleet
+/.idea
+/.nova
+/.vscode
+/.zed
+
+# MacOS and Windows system files
+.DS_Store
+Thumbs.db
