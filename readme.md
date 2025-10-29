@@ -74,9 +74,9 @@ To install Rivet, follow these steps:
    Finally, to ensure that scheduled tasks are run, you will need to set up a cron job on your server that runs the Laravel scheduler every minute. You can do this by adding the following line to your server's crontab file using `crontab -e`:
 
    ```bash
-   * * * * * cd /path-to-your-project && php artisan schedule:run >> /dev/null 2>&1
+   * * * * * cd /your-project-name && php artisan schedule:run >> /dev/null 2>&1
    ```
 
-   ... with `/path-to-your-project` replaced with the actual path to your Rivet installation.
+   ... with `/your-project-name` replaced with the actual path to your Rivet installation.
 
    To exit the crontab editor (if vim), you may need to press `Esc`, then type `:wq` and press `Enter`. 
