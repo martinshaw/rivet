@@ -23,6 +23,15 @@ class Page extends Model
         SoftDeletes,
         HasSlug;
 
+    protected $fillable = [
+        'title',
+        'slug',
+        'content',
+        'path',
+        'published_at',
+        'published_by_user_id',
+    ];
+
     protected $versionable = [
         'title',
         'slug',

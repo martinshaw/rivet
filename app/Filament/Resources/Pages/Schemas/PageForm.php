@@ -7,6 +7,8 @@ use Filament\Forms\Components\DateTimePicker;
 use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Schemas\Components\Utilities\Get;
+use Filament\Schemas\Components\Utilities\Set;
 use Filament\Schemas\Schema;
 use Illuminate\Support\Str;
 
@@ -21,22 +23,12 @@ class PageForm
                  * @see https://v2.filamentphp.com/tricks/generate-slugs-without-overriding
                  */
                 TextInput::make('title')
-                    ->afterStateUpdated(function (Closure $get, Closure $set, ?string $state) {
-                        if (! $get('is_slug_changed_manually') && filled($state)) {
-                            $set('slug', Str::slug($state));
-                        }
-                    })
                     ->reactive()
                     ->required(),
                 TextInput::make('slug')
-                    ->afterStateUpdated(function (Closure $set) {
-                        $set('is_slug_changed_manually', true);
-                    })
+                    ->placeholder(fn (Get $get) => empty($get('title')) ? 'Will be generated on save' : Str::slug($get('title')))
                     ->required()
                     ->unique(ignoreRecord: true),
-                Hidden::make('is_slug_changed_manually')
-                    ->default(false)
-                    ->dehydrated(false),
 
 
                 Textarea::make('content')
