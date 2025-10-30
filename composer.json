@@ -1,20 +1,24 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
-    "name": "laravel/livewire-starter-kit",
+    "name": "martinshaw/rivet",
     "type": "project",
-    "description": "The official Laravel starter kit for Livewire.",
+    "description": "Pages - Forms - Articles; a simple yet powerful free self-hostable CMS platform",
     "keywords": [
         "laravel",
-        "framework"
+        "framework",
+        "cms",
+        "content"
     ],
-    "license": "MIT",
     "require": {
         "php": "^8.2",
+        "filament/filament": "^4.0",
         "laravel/fortify": "^1.30",
         "laravel/framework": "^12.0",
         "laravel/tinker": "^2.10.1",
         "livewire/flux": "^2.1.1",
-        "livewire/volt": "^1.7.0"
+        "livewire/volt": "^1.7.0",
+        "mansoor/filament-versionable": "^4.0",
+        "spatie/laravel-sluggable": "^3.7"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
@@ -41,7 +45,7 @@
     "scripts": {
         "setup": [
             "composer install",
-            "@php -r \"file_exists('.env') || copy('.env.example', '.env');\"",
+            "@php -r \"file_exists('.env') || copy('.env.example.development', '.env');\"",
             "@php artisan key:generate",
             "@php artisan migrate --force",
             "npm install",
@@ -49,7 +53,7 @@
         ],
         "dev": [
             "Composer\\Config::disableProcessTimeout",
-            "npx concurrently -c \"#c4b5fd,#61b03a,#fb7185,#fdba74\" \"php artisan queue:listen --tries=1\" \"php artisan schedule:work\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=queue,scheduler,logs,vite --kill-others"
+            "npx concurrently -c \"#93c5fd,#c4b5fd,#fb7185,#fdba74\" \"php artisan serve\" \"php artisan queue:listen --tries=1\" \"php artisan pail --timeout=0\" \"npm run dev\" --names=server,queue,logs,vite --kill-others"
         ],
         "production": [
             "Composer\\Config::disableProcessTimeout",
@@ -61,7 +65,8 @@
         ],
         "post-autoload-dump": [
             "Illuminate\\Foundation\\ComposerScripts::postAutoloadDump",
-            "@php artisan package:discover --ansi"
+            "@php artisan package:discover --ansi",
+            "@php artisan filament:upgrade"
         ],
         "post-update-cmd": [
             "@php artisan vendor:publish --tag=laravel-assets --ansi --force"
