@@ -1,5 +1,5 @@
+import { Link } from "@inertiajs/react";
 import { Building2, Linkedin, Mail } from "lucide-react";
-import { Link } from "react-router-dom";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
@@ -21,11 +21,11 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Quick Links</h3>
             <ul className="space-y-2">
-              <li><Link to="/about" className="text-sm text-muted-foreground hover-gold">About</Link></li>
-              <li><Link to="/services" className="text-sm text-muted-foreground hover-gold">Services</Link></li>
-              <li><Link to="/partners" className="text-sm text-muted-foreground hover-gold">Partners</Link></li>
-              <li><Link to="/events" className="text-sm text-muted-foreground hover-gold">Events</Link></li>
-              <li><Link to="/insights" className="text-sm text-muted-foreground hover-gold">Insights</Link></li>
+              <li><Link href="/about" className="text-sm text-muted-foreground hover-gold">About</Link></li>
+              <li><Link href="/services" className="text-sm text-muted-foreground hover-gold">Services</Link></li>
+              <li><Link href="/partners" className="text-sm text-muted-foreground hover-gold">Partners</Link></li>
+              <li><Link href="/events" className="text-sm text-muted-foreground hover-gold">Events</Link></li>
+              <li><Link href="/insights" className="text-sm text-muted-foreground hover-gold">Insights</Link></li>
             </ul>
           </div>
 
@@ -60,9 +60,9 @@ const Footer = () => {
               © {currentYear} Capitum Connect. All rights reserved. | UK • Europe • US • UAE
             </p>
             <div className="flex space-x-6 text-sm text-muted-foreground">
-              <Link to="/privacy" className="hover-gold">Privacy Policy</Link>
-              <Link to="/terms" className="hover-gold">Terms of Service</Link>
-              <Link to="/confidentiality" className="hover-gold">Confidentiality</Link>
+              <Link href="/privacy" className="hover-gold">Privacy Policy</Link>
+              <Link href="/terms" className="hover-gold">Terms of Service</Link>
+              <Link href="/confidentiality" className="hover-gold">Confidentiality</Link>
             </div>
           </div>
           <div className="text-center">

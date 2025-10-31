@@ -1,9 +1,9 @@
 import { ArrowRight, Building2, Users, TrendingUp, Award, Briefcase, Globe, Shield, Target, Cpu } from "lucide-react";
-import { Link } from "react-router-dom";
 import { Button } from "../components/ui/button";
 import ProcessTimeline from "../components/ProcessTimeline";
 import Testimonials from "../components/Testimonials";
 import Newsletter from "../components/Newsletter";
+import { Link } from "@inertiajs/react";
 
 const Home = () => {
   const services = [
@@ -81,13 +81,13 @@ const Home = () => {
             Strategic introductions and investment matchmaking across real estate, hospitality, and PropTech.
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <Link to="/submit">
+            <Link href="/submit">
               <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8">
                 Submit an Opportunity
                 <ArrowRight className="ml-2 h-5 w-5" />
               </Button>
             </Link>
-            <Link to="/contact">
+            <Link href="/contact">
               <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10 text-lg px-8">
                 Join Our Network
               </Button>
@@ -162,7 +162,7 @@ const Home = () => {
           </div>
 
           <div className="text-center mt-12">
-            <Link to="/services">
+            <Link href="/services">
               <Button variant="outline" className="border-accent text-accent hover:bg-accent/10">
                 View All Services
                 <ArrowRight className="ml-2 h-4 w-4" />
@@ -235,12 +235,12 @@ const Home = () => {
               Whether you're seeking capital, partnerships, or exclusive opportunities, we facilitate the introductions that matter.
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link to="/submit">
+              <Link href="/submit">
                 <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90">
                   Submit an Opportunity
                 </Button>
               </Link>
-              <Link to="/contact">
+              <Link href="/contact">
                 <Button size="lg" variant="outline" className="border-accent text-accent hover:bg-accent/10">
                   Join Our Network
                 </Button>

@@ -1,11 +1,11 @@
-import { Link, useLocation } from "react-router-dom";
 import { Building2, Menu, X } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
+import { Link, usePage } from "@inertiajs/react";
 
 const Navigation = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const location = useLocation();
+  const page = usePage();
 
   const links = [
     { name: "Home", path: "/" },
@@ -17,13 +17,13 @@ const Navigation = () => {
     { name: "Contact", path: "/contact" },
   ];
 
-  const isActive = (path: string) => location.pathname === path;
+  const isActive = (path: string) => page.url === path;
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 glass-card border-b border-border/30">
       <div className="container mx-auto px-6 py-4">
         <div className="flex items-center justify-between">
-          <Link to="/" className="flex items-center space-x-2 group">
+          <Link href="/" className="flex items-center space-x-2 group">
             <Building2 className="h-8 w-8 text-accent transition-transform group-hover:scale-110" />
             <span className="text-xl font-serif font-semibold text-foreground">
               Capitum Connect
@@ -35,7 +35,7 @@ const Navigation = () => {
             {links.map((link) => (
               <Link
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 className={`text-sm font-medium transition-colors ${
                   isActive(link.path)
                     ? "text-accent"
@@ -45,7 +45,7 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/submit">
+            <Link href="/submit">
               <Button variant="default" className="bg-accent text-accent-foreground hover:bg-accent/90">
                 Submit Opportunity
               </Button>
@@ -67,7 +67,7 @@ const Navigation = () => {
             {links.map((link) => (
               <Link
                 key={link.path}
-                to={link.path}
+                href={link.path}
                 onClick={() => setIsOpen(false)}
                 className={`block py-2 text-sm font-medium transition-colors ${
                   isActive(link.path)
@@ -78,7 +78,7 @@ const Navigation = () => {
                 {link.name}
               </Link>
             ))}
-            <Link to="/submit" onClick={() => setIsOpen(false)}>
+            <Link href="/submit" onClick={() => setIsOpen(false)}>
               <Button variant="default" className="w-full bg-accent text-accent-foreground hover:bg-accent/90">
                 Submit Opportunity
               </Button>
