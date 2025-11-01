@@ -9,18 +9,12 @@ File Name:   Index.tsx
 Description:
 
 */
-
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteHome from '../from_alexs_site/src/pages/Home';
 
-export type HomeProps = {
-    //
-}
-
-export default function Home(props: HomeProps) {
+export default function Home() {
     return (
-        <FromAlexsSiteHome {...props} />
+        <FromAlexsSiteHome />
     );
 }
 

@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteInsights from '../from_alexs_site/src/pages/Insights';
 
-export type InsightsProps = {
-    //
-}
-
-export default function Insights(props: InsightsProps) {
+export default function Insights() {
     return (
-        <FromAlexsSiteInsights {...props} />
+        <FromAlexsSiteInsights />
     );
 }
 

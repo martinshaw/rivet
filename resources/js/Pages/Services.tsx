@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteServices from '../from_alexs_site/src/pages/Services';
 
-export type ServicesProps = {
-    //
-}
-
-export default function Services(props: ServicesProps) {
+export default function Services() {
     return (
-        <FromAlexsSiteServices {...props} />
+        <FromAlexsSiteServices />
     );
 }
 

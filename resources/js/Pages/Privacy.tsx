@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSitePrivacy from '../from_alexs_site/src/pages/Privacy';
 
-export type PrivacyProps = {
-    //
-}
-
-export default function Privacy(props: PrivacyProps) {
+export default function Privacy() {
     return (
-        <FromAlexsSitePrivacy {...props} />
+        <FromAlexsSitePrivacy />
     );
 }
 

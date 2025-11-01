@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteContact from '../from_alexs_site/src/pages/Contact';
 
-export type ContactProps = {
-    //
-}
-
-export default function Contact(props: ContactProps) {
+export default function Contact() {
     return (
-        <FromAlexsSiteContact {...props} />
+        <FromAlexsSiteContact />
     );
 }
 

@@ -492,13 +492,13 @@ const Contact = () => {
                   <Mail className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-sm mb-1">Email</h3>
-                    <a href="mailto:info@capitalconnectre.com" className="text-sm text-muted-foreground hover-gold">
-                      info@capitalconnectre.com
+                    <a href="mailto:ashaw@capitumconnect.com" className="text-sm text-muted-foreground hover-gold">
+                      ashaw@capitumconnect.com
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-start space-x-3">
+                {/* <div className="flex items-start space-x-3">
                   <Linkedin className="h-5 w-5 text-accent mt-1 flex-shrink-0" />
                   <div>
                     <h3 className="font-semibold text-sm mb-1">LinkedIn</h3>
@@ -506,7 +506,7 @@ const Contact = () => {
                       Connect with us
                     </a>
                   </div>
-                </div>
+                </div> */}
 
                 <div className="flex items-start space-x-3">
                   <MapPin className="h-5 w-5 text-accent mt-1 flex-shrink-0" />

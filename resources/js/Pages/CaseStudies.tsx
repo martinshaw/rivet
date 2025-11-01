@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteCaseStudies from '../from_alexs_site/src/pages/CaseStudies';
 
-export type CaseStudiesProps = {
-    //
-}
-
-export default function CaseStudies(props: CaseStudiesProps) {
+export default function CaseStudies() {
     return (
-        <FromAlexsSiteCaseStudies {...props} />
+        <FromAlexsSiteCaseStudies />
     );
 }
 

@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteConfidentiality from '../from_alexs_site/src/pages/Confidentiality';
 
-export type ConfidentialityProps = {
-    //
-}
-
-export default function Confidentiality(props: ConfidentialityProps) {
+export default function Confidentiality() {
     return (
-        <FromAlexsSiteConfidentiality {...props} />
+        <FromAlexsSiteConfidentiality />
     );
 }
 

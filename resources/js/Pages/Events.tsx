@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteEvents from '../from_alexs_site/src/pages/Events';
 
-export type EventsProps = {
-    //
-}
-
-export default function Events(props: EventsProps) {
+export default function Events() {
     return (
-        <FromAlexsSiteEvents {...props} />
+        <FromAlexsSiteEvents />
     );
 }
 

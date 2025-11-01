@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteSubmit from '../from_alexs_site/src/pages/Submit';
 
-export type SubmitProps = {
-    //
-}
-
-export default function Submit(props: SubmitProps) {
+export default function Submit() {
     return (
-        <FromAlexsSiteSubmit {...props} />
+        <FromAlexsSiteSubmit />
     );
 }
 

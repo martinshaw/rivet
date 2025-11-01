@@ -42,14 +42,14 @@ const Footer = () => {
           <div>
             <h3 className="font-semibold mb-4">Connect</h3>
             <div className="space-y-3">
-              <a href="mailto:info@capitalconnectre.com" className="flex items-center space-x-2 text-sm text-muted-foreground hover-gold">
+              <a href="mailto:ashaw@capitumconnect.com" className="flex items-center space-x-2 text-sm text-muted-foreground hover-gold">
                 <Mail className="h-4 w-4" />
-                <span>info@capitalconnectre.com</span>
+                <span>ashaw@capitumconnect.com</span>
               </a>
-              <a href="#" className="flex items-center space-x-2 text-sm text-muted-foreground hover-gold">
+              {/* <a href="#" className="flex items-center space-x-2 text-sm text-muted-foreground hover-gold">
                 <Linkedin className="h-4 w-4" />
                 <span>LinkedIn</span>
-              </a>
+              </a> */}
             </div>
           </div>
         </div>

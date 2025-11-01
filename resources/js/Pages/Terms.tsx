@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteTerms from '../from_alexs_site/src/pages/Terms';
 
-export type TermsProps = {
-    //
-}
-
-export default function Terms(props: TermsProps) {
+export default function Terms() {
     return (
-        <FromAlexsSiteTerms {...props} />
+        <FromAlexsSiteTerms />
     );
 }
 

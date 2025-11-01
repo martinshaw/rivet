@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteNotFound from '../from_alexs_site/src/pages/NotFound';
 
-export type NotFoundProps = {
-    //
-}
-
-export default function NotFound(props: NotFoundProps) {
+export default function NotFound() {
     return (
-        <FromAlexsSiteNotFound {...props} />
+        <FromAlexsSiteNotFound />
     );
 }
 

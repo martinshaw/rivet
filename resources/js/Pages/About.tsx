@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSiteAbout from '../from_alexs_site/src/pages/About';
 
-export type AboutProps = {
-    //
-}
-
-export default function About(props: AboutProps) {
+export default function About() {
     return (
-        <FromAlexsSiteAbout {...props} />
+        <FromAlexsSiteAbout />
     );
 }
 

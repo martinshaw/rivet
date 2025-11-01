@@ -141,8 +141,8 @@ const About = () => {
               { title: "Developers", desc: "In need of capital or co-investment" },
               { title: "Operators & Brands", desc: "Expanding into new markets" }
             ].map((group, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="glass-card p-6 rounded-xl text-center fade-in-up"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -176,9 +176,9 @@ const About = () => {
                 With extensive experience in real estate investment, capital markets, and strategic partnerships, our founder brings deep industry knowledge and a curated network spanning family offices, institutional investors, and leading developers.
               </p>
             </div>
-            <a 
-              href="https://www.linkedin.com/company/capital-connect-real-estate" 
-              target="_blank" 
+            {/* <a
+              href="https://www.linkedin.com/company/capital-connect-real-estate"
+              target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 text-accent hover:text-accent/80 transition-colors"
             >
@@ -186,7 +186,7 @@ const About = () => {
                 <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z"/>
               </svg>
               Connect on LinkedIn
-            </a>
+            </a> */}
           </div>
         </section>
       </div>

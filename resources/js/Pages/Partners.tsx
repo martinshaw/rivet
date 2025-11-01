@@ -10,17 +10,12 @@ Description:
 
 */
 
-import React from 'react';
-import Layout from '../from_alexs_site/Layout/Layout';
+import Layout from '../Layouts/Layout';
 import FromAlexsSitePartners from '../from_alexs_site/src/pages/Partners';
 
-export type PartnersProps = {
-    //
-}
-
-export default function Partners(props: PartnersProps) {
+export default function Partners() {
     return (
-        <FromAlexsSitePartners {...props} />
+        <FromAlexsSitePartners />
     );
 }
 
