@@ -2,7 +2,7 @@ import { useState } from "react";
 import { Calendar, Tag, ArrowRight, TrendingUp } from "lucide-react";
 import { Button } from "../components/ui/button";
 import { Input } from "../components/ui/input";
-import { useToast } from "../../hooks/use-toast";
+import { useToast } from "../hooks/use-toast";
 
 const Insights = () => {
   const { toast } = useToast();
@@ -107,7 +107,7 @@ const Insights = () => {
 
         {/* Featured Articles */}
         <section className="mb-16">
-          <h2 className="text-3xl font-serif font-bold mb-8">Featured Insights</h2>
+          <h2 className="text-3xl font-serif font-bold mb-8 fade-in-up">Featured Insights</h2>
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {articles.filter(a => a.featured).map((article, index) => (
               <div
@@ -143,7 +143,7 @@ const Insights = () => {
 
         {/* All Articles */}
         <section>
-          <h2 className="text-3xl font-serif font-bold mb-8">Recent Articles</h2>
+          <h2 className="text-3xl font-serif font-bold mb-8 fade-in-up">Recent Articles</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             {articles.filter(a => !a.featured).map((article, index) => (
               <div

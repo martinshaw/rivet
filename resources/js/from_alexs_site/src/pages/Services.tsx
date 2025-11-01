@@ -1,6 +1,4 @@
 import { Users, TrendingUp, Briefcase, Building2, Award, Cpu, HandshakeIcon, Search, Scale, Calendar, UserPlus, Briefcase as BriefcaseAlt } from "lucide-react";
-import hotelImage from "@/assets/luxury-hotel.jpg";
-import residentialImage from "@/assets/residential-dev.jpg";
 
 const Services = () => {
   const coreServices = [
@@ -133,8 +131,8 @@ const Services = () => {
         <section className="mb-20">
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
             {coreServices.map((service, index) => (
-              <div 
-                key={index} 
+              <div
+                key={index}
                 className="glass-card p-8 rounded-xl fade-in-up hover:border-accent/50 transition-all duration-300"
                 style={{ animationDelay: `${index * 0.1}s` }}
               >
@@ -162,9 +160,9 @@ const Services = () => {
           <h2 className="text-4xl font-serif font-bold text-center mb-12">Sector Focus</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-5xl mx-auto mb-8">
             <div className="glass-card rounded-xl overflow-hidden fade-in-up">
-              <div 
+              <div
                 className="h-64 bg-cover bg-center"
-                style={{ backgroundImage: `url(${hotelImage})` }}
+                style={{ backgroundImage: `url(/assets/luxury-hotel.jpg)` }}
               />
               <div className="p-8">
                 <h3 className="text-2xl font-serif font-semibold mb-3 text-accent">Hospitality</h3>
@@ -180,9 +178,9 @@ const Services = () => {
             </div>
 
             <div className="glass-card rounded-xl overflow-hidden fade-in-up" style={{ animationDelay: '0.1s' }}>
-              <div 
+              <div
                 className="h-64 bg-cover bg-center"
-                style={{ backgroundImage: `url(${residentialImage})` }}
+                style={{ backgroundImage: `url(/assets/residential-dev.jpg)` }}
               />
               <div className="p-8">
                 <h3 className="text-2xl font-serif font-semibold mb-3 text-accent">Residential</h3>
@@ -203,9 +201,9 @@ const Services = () => {
             <h3 className="text-2xl font-serif font-semibold mb-6 text-center">Commercial Real Estate</h3>
             <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-4">
               {["Industrial & Logistics", "Data Centres", "Offices", "Life Science", "Healthcare", "Retail"].map((sector, index) => (
-                <div 
-                  key={index} 
-                  className="glass-card p-6 rounded-xl text-center fade-in-up hover:border-accent/50 transition-all duration-300"
+                <div
+                  key={index}
+                  className="glass-card p-6 rounded-xl text-center fade-in-up hover:border-accent/50 transition-all duration-300 items-center justify-center flex"
                   style={{ animationDelay: `${index * 0.05}s` }}
                 >
                   <p className="text-sm font-semibold text-muted-foreground">{sector}</p>
