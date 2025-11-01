@@ -11,11 +11,11 @@ Description:
 */
 
 import Layout from '../Layouts/Layout';
-import FromAlexsSiteNotFound from '../from_alexs_site/src/pages/NotFound';
+import FromAlexsSiteNotFound, {type FromAlexsSiteNotFoundProps} from '../from_alexs_site/src/pages/NotFound';
 
-export default function NotFound() {
+export default function NotFound(props: FromAlexsSiteNotFoundProps) {
     return (
-        <FromAlexsSiteNotFound />
+        <FromAlexsSiteNotFound {...props} />
     );
 }
 
