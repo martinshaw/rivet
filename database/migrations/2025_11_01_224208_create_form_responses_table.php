@@ -11,17 +11,18 @@ return new class extends Migration
      */
     public function up(): void
     {
-        Schema::create('forms', function (Blueprint $table) {
+        Schema::create('form_responses', function (Blueprint $table) {
             $table->id();
 
-            $table->string('name');
-            $table->string('slug')->nullable();
-            $table->timestamp('enabled_at')->nullable();
-            $table->timestamp('enabled_for_first_time_at')->nullable();
-            $table->boolean('requires_authentication_guard')->nullable();
+            $table->string('ip_address')->nullable();
+            $table->longText('user_agent')->nullable();
+
+            $table->foreignId('form_id')->constrained()->onDelete('cascade');
 
             $table->timestamps();
             $table->softDeletes();
+
+            $table->index('ip_address');
         });
     }
 
@@ -30,6 +31,6 @@ return new class extends Migration
      */
     public function down(): void
     {
-        Schema::dropIfExists('forms');
+        Schema::dropIfExists('form_responses');
     }
 };

@@ -2,6 +2,18 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
+use App\Http\Controllers\FormResponseController;
+
+// Routes related to Rivet internal functionality
+
+Route::group([
+    'prefix' => '_rivet',
+    'as' => 'rivet.',
+], function () {
+    Route::post('/forms/{form:slug}', [FormResponseController::class, 'store'])->name('forms.store');
+});
+
+// Routes related to Alex's hardcoded site pages
 
 Route::get('/', fn () => Inertia::render('Home'))->name('home');
 Route::get('/about', fn () => Inertia::render('About'))->name('about');
@@ -15,3 +27,4 @@ Route::get('/submit', fn () => Inertia::render('Submit'))->name('submit');
 Route::get('/privacy', fn () => Inertia::render('Privacy'))->name('privacy');
 Route::get('/terms', fn () => Inertia::render('Terms'))->name('terms');
 Route::get('/confidentiality', fn () => Inertia::render('Confidentiality'))->name('confidentiality');
+

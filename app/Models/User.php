@@ -5,13 +5,16 @@ namespace App\Models;
 use Illuminate\Support\Str;
 use Illuminate\Notifications\Notifiable;
 use Filament\Models\Contracts\FilamentUser;
-use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use Filament\Auth\MultiFactor\App\Contracts\HasAppAuthentication;
 use Filament\Auth\MultiFactor\App\Contracts\HasAppAuthenticationRecovery;
 
-class User extends Authenticatable implements FilamentUser, HasAppAuthentication, HasAppAuthenticationRecovery
+class User
+    extends Authenticatable
+    implements FilamentUser,
+        HasAppAuthentication,
+        HasAppAuthenticationRecovery
 {
     /** @use HasFactory<\Database\Factories\UserFactory> */
     use HasFactory, Notifiable;
@@ -105,7 +108,7 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
     public function getAppAuthenticationRecoveryCodes(): ?array
     {
         // This method should return the user's saved app authentication recovery codes.
-    
+
         return $this->app_authentication_recovery_codes;
     }
 
@@ -115,7 +118,7 @@ class User extends Authenticatable implements FilamentUser, HasAppAuthentication
     public function saveAppAuthenticationRecoveryCodes(?array $codes): void
     {
         // This method should save the user's app authentication recovery codes.
-    
+
         $this->app_authentication_recovery_codes = $codes;
         $this->save();
     }

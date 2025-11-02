@@ -1,25 +1,34 @@
 <?php
 
-namespace App\Filament\Resources\Users\Schemas;
+namespace App\Filament\Resources\Forms\Schemas;
 
-use App\Models\User;
+use App\Models\Form;
+use Filament\Infolists\Components\IconEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
+use Filament\Tables\Columns\Layout\Split;
 
-class UserInfolist
+class FormInfolist
 {
     public static function configure(Schema $schema): Schema
     {
         return $schema
             ->components([
                 TextEntry::make('name'),
+                TextEntry::make('slug'),
 
-                TextEntry::make('email')
-                    ->label('Email address'),
-                TextEntry::make('email_verified_at')
+                TextEntry::make('enabled_at')
                     ->dateTime()
                     ->placeholder('-'),
+                TextEntry::make('enabled_for_first_time_at')
+                    ->label('Enabled For First Time At')
+                    ->dateTime()
+                    ->placeholder('-'),
+
+                TextEntry::make('requires_authentication_guard')
+                    ->label('Requires Authentication')
+                    ->formatStateUsing(fn (?bool $state): string => $state ? 'Yes - using \'' . $state . '\' guard' : 'No'),
 
                 Grid::make()
                     ->columnSpanFull()
@@ -32,7 +41,7 @@ class UserInfolist
                             ->placeholder('-'),
                         TextEntry::make('deleted_at')
                             ->dateTime()
-                            ->visible(fn (User $record): bool => $record->trashed()),
+                            ->visible(fn (Form $record): bool => $record->trashed()),
                     ]),
             ]);
     }
