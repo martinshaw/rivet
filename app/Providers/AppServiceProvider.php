@@ -3,13 +3,13 @@
 namespace App\Providers;
 
 use App\Models\Form;
-use App\Models\FormResponse;
 use App\Models\Page;
 use App\Models\User;
+use App\Models\FormResponse;
 use App\Policies\FormPolicy;
-use App\Policies\FormResponsePolicy;
 use App\Policies\PagePolicy;
 use App\Policies\UserPolicy;
+use App\Policies\FormResponsePolicy;
 use Illuminate\Support\Facades\Gate;
 use Illuminate\Support\ServiceProvider;
 

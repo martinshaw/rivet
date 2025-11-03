@@ -5,6 +5,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\FormResponseController;
 
 // Routes related to Rivet internal functionality
+// TODO: In the future, this will be removed and we will use the auto-generated stubs in `routes/rivet.php` instead
 
 Route::group([
     'prefix' => '_rivet',
@@ -28,3 +29,4 @@ Route::get('/privacy', fn () => Inertia::render('Privacy'))->name('privacy');
 Route::get('/terms', fn () => Inertia::render('Terms'))->name('terms');
 Route::get('/confidentiality', fn () => Inertia::render('Confidentiality'))->name('confidentiality');
 
+// include_once './rivet.php';

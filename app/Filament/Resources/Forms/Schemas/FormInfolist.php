@@ -3,11 +3,9 @@
 namespace App\Filament\Resources\Forms\Schemas;
 
 use App\Models\Form;
-use Filament\Infolists\Components\IconEntry;
-use Filament\Infolists\Components\TextEntry;
-use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
-use Filament\Tables\Columns\Layout\Split;
+use Filament\Schemas\Components\Grid;
+use Filament\Infolists\Components\TextEntry;
 
 class FormInfolist
 {
