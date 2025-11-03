@@ -35,6 +35,10 @@ class FormField extends Model
         'sort_order' => 'integer',
     ];
 
+    protected $appends = [
+        'validation_rules_display',
+    ];
+
     /**
      * Get the options for generating the slug.
      */
@@ -67,6 +71,20 @@ class FormField extends Model
     public function buildSortQuery()
     {
         return static::query()->where('user_id', $this->user_id);
+    }
+
+    public function getValidationRulesDisplayAttribute()
+    {
+        return array_unique([
+            ...($this?->type?->getClassInstance()?->getDefaultValidationRules() ?? []),
+            ...(array_filter(
+                array_map(
+                    fn ($ruleSerialized) => $ruleSerialized['type'] ?? null,
+                    $this->validation_rules ?? [],
+                ),
+                fn ($rule) => $rule !== null,
+            ))
+        ]);
     }
 
     public function form()

@@ -4,3 +4,5 @@
 @source '../../../../app/Filament/**/*';
 @source '../../../../resources/views/filament/**/*';
 @source '../../../../vendor/mansoor/filament-versionable/resources/**/*.blade.php';
+
+@source '../../../../app/Classes/FormFieldValidationRuleFilamentBuilderBlocks/**/*.php';

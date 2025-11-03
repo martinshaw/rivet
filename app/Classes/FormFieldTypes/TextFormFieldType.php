@@ -5,21 +5,21 @@ namespace App\Classes\FormFieldTypes;
  *
  * Author:      Martin Shaw (developer@martinshaw.co)
  * Created:     2025-11-01T23:04:57.177Z
- * Modified:     2025-11-01T23:12:40.359Z
- * File Name:   FileFormField.php
+ * Modified:     2025-11-03T07:38:10.233Z
+ * File Name:   TextFormFieldType.php
  *
  * Description: description
  */
 
-class FileFormField extends BaseFormField
+class TextFormFieldType extends BaseFormFieldType
 {
     public static function getHumanName(): string
     {
-        return 'File';
+        return 'Text';
     }
 
     public static function getDefaultValidationRules(): array
     {
-        return ['file'];
+        return ['string'];
     }
 }

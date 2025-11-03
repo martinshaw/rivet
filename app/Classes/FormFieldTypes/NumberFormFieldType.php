@@ -5,21 +5,21 @@ namespace App\Classes\FormFieldTypes;
  *
  * Author:      Martin Shaw (developer@martinshaw.co)
  * Created:     2025-11-01T23:04:57.177Z
- * Modified:     2025-11-01T23:15:55.463Z
- * File Name:   EmailFormField.php
+ * Modified:     2025-11-01T23:07:11.271Z
+ * File Name:   NumberFormFieldType.php
  *
  * Description: description
  */
 
-class EmailFormField extends BaseFormField
+class NumberFormFieldType extends BaseFormFieldType
 {
     public static function getHumanName(): string
     {
-        return 'Email';
+        return 'Number';
     }
 
     public static function getDefaultValidationRules(): array
     {
-        return ['email'];
+        return ['numeric'];
     }
 }

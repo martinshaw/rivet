@@ -5,21 +5,21 @@ namespace App\Classes\FormFieldTypes;
  *
  * Author:      Martin Shaw (developer@martinshaw.co)
  * Created:     2025-11-01T23:04:57.177Z
- * Modified:     2025-11-01T23:18:33.886Z
- * File Name:   TextFormField.php
+ * Modified:     2025-11-01T23:12:56.137Z
+ * File Name:   SelectFormFieldType.php
  *
  * Description: description
  */
 
-class TextFormField extends BaseFormField
+class SelectFormFieldType extends BaseFormFieldType
 {
     public static function getHumanName(): string
     {
-        return 'Text';
+        return 'Select';
     }
 
     public static function getDefaultValidationRules(): array
     {
-        return ['string'];
+        return ['array'];
     }
 }

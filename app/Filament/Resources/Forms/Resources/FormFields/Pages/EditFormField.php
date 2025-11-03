@@ -1,26 +1,21 @@
 <?php
 
-namespace App\Filament\Resources\Forms\Pages;
+namespace App\Filament\Resources\Forms\Resources\FormFields\Pages;
 
-use App\Filament\Resources\Forms\FormResource;
-use Filament\Actions\Action;
+use App\Filament\Resources\Forms\Resources\FormFields\FormFieldResource;
 use Filament\Actions\DeleteAction;
 use Filament\Actions\ForceDeleteAction;
 use Filament\Actions\RestoreAction;
 use Filament\Actions\ViewAction;
 use Filament\Resources\Pages\EditRecord;
 
-class EditForm extends EditRecord
+class EditFormField extends EditRecord
 {
-    protected static string $resource = FormResource::class;
+    protected static string $resource = FormFieldResource::class;
 
     protected function getHeaderActions(): array
     {
         return [
-            Action::make('fields')
-                ->label('Manage Fields')
-                ->url($this->getResource()::getUrl('fields', ['record' => $this->record])),
-
             ViewAction::make(),
             DeleteAction::make(),
             ForceDeleteAction::make(),
@@ -30,6 +25,8 @@ class EditForm extends EditRecord
 
     protected function getRedirectUrl(): string
     {
-        return $this->getResource()::getUrl('index');
+        return $this->getParentResource()::getUrl('fields', [
+            'record' => $this->record->form->slug,
+        ]);
     }
 }

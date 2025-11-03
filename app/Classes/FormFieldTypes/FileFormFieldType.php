@@ -5,21 +5,21 @@ namespace App\Classes\FormFieldTypes;
  *
  * Author:      Martin Shaw (developer@martinshaw.co)
  * Created:     2025-11-01T23:04:57.177Z
- * Modified:     2025-11-01T23:19:05.774Z
- * File Name:   RadioFormField.php
+ * Modified:     2025-11-02T12:25:25.891Z
+ * File Name:   FileFormFieldType.php
  *
  * Description: description
  */
 
-class RadioFormField extends BaseFormField
+class FileFormFieldType extends BaseFormFieldType
 {
     public static function getHumanName(): string
     {
-        return 'Radio';
+        return 'File';
     }
 
     public static function getDefaultValidationRules(): array
     {
-        return ['boolean'];
+        return ['file'];
     }
 }

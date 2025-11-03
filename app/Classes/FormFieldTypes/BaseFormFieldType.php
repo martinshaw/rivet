@@ -6,8 +6,8 @@ namespace App\Classes\FormFieldTypes;
  *
  * Author:      Martin Shaw (developer@martinshaw.co)
  * Created:     2025-11-01T23:05:03.280Z
- * Modified:     2025-11-02T00:47:48.278Z
- * File Name:   BaseFormField.php
+ * Modified:     2025-11-03T07:35:47.386Z
+ * File Name:   BaseFormFieldType.php
  *
  * Description: description
  */
@@ -15,7 +15,7 @@ namespace App\Classes\FormFieldTypes;
 /**
  * Basis for classes which are enumerated by FormFieldType enum.
  */
-abstract class BaseFormField
+abstract class BaseFormFieldType
 {
     /**
      * @return string Human readable caption for this form field type.
@@ -33,5 +33,17 @@ abstract class BaseFormField
     public static function getReactComponentPath(): ?string
     {
         return null;
+    }
+
+    /**
+     * @return array<int, class-string<\App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\BaseFormFieldValidationRuleFilamentBuilderBlock>> Validation rule Filament builder blocks associated with this form field type.
+     */
+    public static function getValidationRuleFilamentBuilderBlocks(): array
+    {
+        return [
+            // These are common to all form field types
+            \App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\Utilities\RequiredFormFieldValidationRuleFilamentBuilderBlock::class,
+            \App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\Utilities\NullableFormFieldValidationRuleFilamentBuilderBlock::class,
+        ];
     }
 }

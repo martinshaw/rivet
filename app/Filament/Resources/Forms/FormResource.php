@@ -5,6 +5,7 @@ namespace App\Filament\Resources\Forms;
 use App\Filament\Resources\Forms\Pages\CreateForm;
 use App\Filament\Resources\Forms\Pages\EditForm;
 use App\Filament\Resources\Forms\Pages\ListForms;
+use App\Filament\Resources\Forms\Pages\ManageFormFormFields;
 use App\Filament\Resources\Forms\Pages\ViewForm;
 use App\Filament\Resources\Forms\RelationManagers\FieldsRelationManager;
 use App\Filament\Resources\Forms\Schemas\FormForm;
@@ -23,7 +24,7 @@ class FormResource extends Resource
 {
     protected static ?string $model = Form::class;
 
-    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
+    protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedClipboardDocumentList;
 
     protected static ?string $recordTitleAttribute = 'name';
 
@@ -45,7 +46,7 @@ class FormResource extends Resource
     public static function getRelations(): array
     {
         return [
-            FieldsRelationManager::class,
+            //
         ];
     }
 
@@ -56,6 +57,7 @@ class FormResource extends Resource
             'create' => CreateForm::route('/create'),
             'view' => ViewForm::route('/{record}'),
             'edit' => EditForm::route('/{record}/edit'),
+            'fields' => ManageFormFormFields::route('/{record}/fields'),
         ];
     }
 
