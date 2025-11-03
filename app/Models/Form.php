@@ -40,7 +40,7 @@ class Form extends Model
             ->saveSlugsTo('slug')
             ->startSlugSuffixFrom(2)
             // I want to update the slug for the last time when enabling the form for the first time. But I need it for explicit model binding in Filament navigation
-            ->skipGenerateWhen(fn () => $this->enabled_for_first_time_at != null);
+            ->skipGenerateWhen(fn () => $this->enabled_for_first_time_at != null && $this->slug != null);
 
             // There may be referencing of this form by its slug in the page code and Page model contents, so we don't want it to change.
             // ->doNotGenerateSlugsOnUpdate();

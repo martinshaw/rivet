@@ -6,6 +6,7 @@ use App\Filament\Resources\Forms\Pages\CreateForm;
 use App\Filament\Resources\Forms\Pages\EditForm;
 use App\Filament\Resources\Forms\Pages\ListForms;
 use App\Filament\Resources\Forms\Pages\ViewForm;
+use App\Filament\Resources\Forms\RelationManagers\FieldsRelationManager;
 use App\Filament\Resources\Forms\Schemas\FormForm;
 use App\Filament\Resources\Forms\Schemas\FormInfolist;
 use App\Filament\Resources\Forms\Tables\FormsTable;
@@ -44,7 +45,7 @@ class FormResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            FieldsRelationManager::class,
         ];
     }
 
