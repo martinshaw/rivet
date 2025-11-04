@@ -8,7 +8,14 @@
         "framework",
         "cms",
         "content",
-        "package",
+        "package"
+    ],
+    "license": "proprietary",
+    "authors": [
+        {
+            "name": "Martin Shaw",
+            "email": "hello@martinshaw.co"
+        }
     ],
     "require": {
         "php": "^8.2",
