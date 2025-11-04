@@ -14,6 +14,7 @@
 .env
 .env.backup
 .env.production
+.env.production.*
 
 # Cache files
 /.phpunit.cache
