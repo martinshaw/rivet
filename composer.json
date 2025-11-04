@@ -11,6 +11,7 @@
     ],
     "require": {
         "php": "^8.2",
+        "donatj/phpuseragentparser": "^1.11",
         "filament/filament": "^4.0",
         "inertiajs/inertia-laravel": "^2.0",
         "laravel/fortify": "^1.30",
@@ -19,7 +20,9 @@
         "livewire/flux": "^2.1.1",
         "livewire/volt": "^1.7.0",
         "mansoor/filament-versionable": "^4.0",
-        "spatie/laravel-sluggable": "^3.7"
+        "spatie/eloquent-sortable": "^4.5",
+        "spatie/laravel-sluggable": "^3.7",
+        "tightenco/ziggy": "^2.6"
     },
     "require-dev": {
         "fakerphp/faker": "^1.23",
