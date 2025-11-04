@@ -2,14 +2,17 @@
     "$schema": "https://getcomposer.org/schema.json",
     "name": "martinshaw/rivet",
     "type": "library",
-    "description": "Pages - Forms - Articles; adds simple and powerful CMS functionality to your Laravel application",
+    "description": "Generate simple, fast and powerful CMS functionality for your Laravel application  ⌁  Pages - Forms - Articles - Data",
     "keywords": [
-        "laravel",
-        "framework",
         "cms",
-        "content",
-        "package"
+        "package",
+        "laravel",
+        "drag-and-drop",
+        "forms",
+        "blogs",
+        "inertiajs"
     ],
+    "homepage": "https://rivet.martinshaw.co",
     "license": "proprietary",
     "authors": [
         {
