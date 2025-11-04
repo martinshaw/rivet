@@ -3,6 +3,7 @@
 namespace App\Filament\Resources\Forms\RelationManagers;
 
 use App\Models\FormResponse;
+use App\Models\FormResponseField;
 use donatj\UserAgent\UserAgentParser;
 use Filament\Actions\AssociateAction;
 use Filament\Actions\BulkActionGroup;
@@ -19,12 +20,16 @@ use Filament\Actions\RestoreBulkAction;
 use Filament\Actions\ViewAction;
 use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
+use Filament\Infolists\Components\RepeatableEntry;
 use Filament\Infolists\Components\TextEntry;
 use Filament\Resources\RelationManagers\RelationManager;
+use Filament\Schemas\Components\Component;
+use Filament\Schemas\Components\Grid;
 use Filament\Schemas\Schema;
 use Filament\Tables\Columns\TextColumn;
 use Filament\Tables\Filters\TrashedFilter;
 use Filament\Tables\Table;
+use GMP;
 use Illuminate\Database\Eloquent\Builder;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use Illuminate\Support\Facades\Cache;
@@ -39,9 +44,9 @@ class ResponsesRelationManager extends RelationManager
     {
         return $schema
             ->components([
-                TextInput::make('ip_address'),
-                Textarea::make('user_agent')
-                    ->columnSpanFull(),
+                // TextInput::make('ip_address'),
+                // Textarea::make('user_agent')
+                //     ->columnSpanFull(),
             ]);
     }
 
@@ -68,6 +73,19 @@ class ResponsesRelationManager extends RelationManager
                 TextEntry::make('deleted_at')
                     ->dateTime()
                     ->visible(fn (FormResponse $record): bool => $record->trashed()),
+
+                RepeatableEntry::make('responseFields')
+                    ->schema([
+                        TextEntry::make('formField.name')
+                            ->inlineLabel()
+                            ->label('Form Field Name'),
+                        // TextEntry::make('formField.slug')
+                        //     ->inlineLabel()
+                        //     ->label('Form Field Slug'),
+                        Grid::make(1)
+                            ->schema(fn (FormResponseField $record) => $record?->formField?->type?->getClassInstance()?->getResponseValueFilamentInfolistEntries($record) ?? []),
+                    ])
+                    ->columnSpanFull(),
             ]);
     }
 

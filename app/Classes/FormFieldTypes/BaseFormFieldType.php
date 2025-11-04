@@ -1,12 +1,16 @@
 <?php
 namespace App\Classes\FormFieldTypes;
 
+use App\Models\FormResponseField;
+use Filament\Infolists\Components\KeyValueEntry;
+use Filament\Infolists\Components\TextEntry;
+
 /**
  * All Rights Reserved, (c) 2025 rivet.
  *
  * Author:      Martin Shaw (developer@martinshaw.co)
  * Created:     2025-11-01T23:05:03.280Z
- * Modified:     2025-11-03T07:35:47.386Z
+ * Modified:     2025-11-04T11:08:23.912Z
  * File Name:   BaseFormFieldType.php
  *
  * Description: description
@@ -44,6 +48,57 @@ abstract class BaseFormFieldType
             // These are common to all form field types
             \App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\Utilities\RequiredFormFieldValidationRuleFilamentBuilderBlock::class,
             \App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\Utilities\NullableFormFieldValidationRuleFilamentBuilderBlock::class,
+        ];
+    }
+
+    /**
+     * @param FormResponseField $formResponseField
+     * @return array<int, Component|Action|ActionGroup|string|Htmlable> Filament Infolist entry components to show the response value for this form field type.
+     */
+    public static function getResponseValueFilamentInfolistEntries(FormResponseField $formResponseField): array
+    {
+        $decodedValue = json_decode($formResponseField->value, true);
+        if (json_last_error() !== JSON_ERROR_NONE) {
+            return [
+                TextEntry::make('value')
+                    ->inlineLabel()
+                    ->label('Response Value')
+                    ->hint('Could not decode value from JSON.'),
+            ];
+        }
+
+        if (is_object($decodedValue)) {
+            return [
+                KeyValueEntry::make('value')
+                    ->inlineLabel()
+                    ->label('Response Value')
+            ];
+        }
+
+        if (is_array($decodedValue)) {
+            return [
+                KeyValueEntry::make('value')
+                    ->inlineLabel()
+                    ->label('Response Value')
+            ];
+        }
+
+        if (is_string($decodedValue) || is_numeric($decodedValue) || is_bool($decodedValue) || is_null($decodedValue)) {
+            return [
+                TextEntry::make('value')
+                    ->inlineLabel()
+                    ->label('Response Value')
+                    ->formatStateUsing(function ($state) {
+                        return (string)json_decode($state);
+                    }),
+            ];
+        }
+
+        return [
+            TextEntry::make('value')
+                ->inlineLabel()
+                ->label('Response Value')
+                ->hint('Unknown value type.'),
         ];
     }
 }
