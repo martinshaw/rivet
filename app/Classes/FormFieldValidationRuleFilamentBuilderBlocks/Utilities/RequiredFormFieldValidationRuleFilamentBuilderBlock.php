@@ -5,20 +5,24 @@ namespace App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\Utilities;
  *
  * Author:      Martin Shaw (developer@martinshaw.co)
  * Created:     2025-11-02T12:23:52.717Z
- * Modified:     2025-11-03T08:47:37.886Z
+ * Modified:     2025-11-04T09:35:49.908Z
  * File Name:   RequiredFormFieldValidationRuleFilamentBuilderBlock.php
  *
  * Description: description
  */
 
 use Illuminate\Support\HtmlString;
-use Filament\Forms\Components\Hidden;
 use Filament\Forms\Components\Builder\Block;
 use Filament\Infolists\Components\TextEntry;
 use App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\BaseFormFieldValidationRuleFilamentBuilderBlock;
 
 class RequiredFormFieldValidationRuleFilamentBuilderBlock extends BaseFormFieldValidationRuleFilamentBuilderBlock
 {
+    public static function getValidationRuleName(): string
+    {
+        return 'required';
+    }
+
     /**
      * @return Block
      */

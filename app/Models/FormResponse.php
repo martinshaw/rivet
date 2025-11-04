@@ -20,6 +20,10 @@ class FormResponse extends Model
         'form_id',
     ];
 
+    protected $with = [
+        'responseFields',
+    ];
+
     public function form()
     {
         return $this->belongsTo(Form::class);

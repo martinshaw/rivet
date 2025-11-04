@@ -20,6 +20,11 @@ use App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\BaseFormFieldValida
 
 class AcceptedIfFormFieldValidationRuleFilamentBuilderBlock extends BaseFormFieldValidationRuleFilamentBuilderBlock
 {
+    public static function getValidationRuleName(): string
+    {
+        return 'accepted_if';
+    }
+
     /**
      * @return Block
      */

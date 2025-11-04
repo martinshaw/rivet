@@ -19,6 +19,11 @@ use Filament\Infolists\Components\TextEntry;
 
 class DeclinedFormFieldValidationRuleFilamentBuilderBlock extends BaseFormFieldValidationRuleFilamentBuilderBlock
 {
+    public static function getValidationRuleName(): string
+    {
+        return 'declined';
+    }
+
     /**
      * @return Block
      */

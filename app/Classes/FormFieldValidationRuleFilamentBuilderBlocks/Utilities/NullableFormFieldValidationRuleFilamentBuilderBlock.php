@@ -19,6 +19,11 @@ use App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\BaseFormFieldValida
 
 class NullableFormFieldValidationRuleFilamentBuilderBlock extends BaseFormFieldValidationRuleFilamentBuilderBlock
 {
+    public static function getValidationRuleName(): string
+    {
+        return 'nullable';
+    }
+
     /**
      * @return Block
      */

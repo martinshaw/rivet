@@ -19,6 +19,11 @@ use Filament\Infolists\Components\TextEntry;
 
 class BooleanFormFieldValidationRuleFilamentBuilderBlock extends BaseFormFieldValidationRuleFilamentBuilderBlock
 {
+    public static function getValidationRuleName(): string
+    {
+        return 'boolean';
+    }
+
     /**
      * @return Block
      */

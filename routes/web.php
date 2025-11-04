@@ -2,7 +2,7 @@
 
 use Inertia\Inertia;
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\FormResponseController;
+use App\Http\Controllers\Rivet\RivetFormResponseController;
 
 // Routes related to Rivet internal functionality
 // TODO: In the future, this will be removed and we will use the auto-generated stubs in `routes/rivet.php` instead
@@ -11,7 +11,7 @@ Route::group([
     'prefix' => '_rivet',
     'as' => 'rivet.',
 ], function () {
-    Route::post('/forms/{form:slug}', [FormResponseController::class, 'store'])->name('forms.store');
+    Route::post('/forms/{form:slug}', [RivetFormResponseController::class, 'store'])->name('forms.store');
 });
 
 // Routes related to Alex's hardcoded site pages

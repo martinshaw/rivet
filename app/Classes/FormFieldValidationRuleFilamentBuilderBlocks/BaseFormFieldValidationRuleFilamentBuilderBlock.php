@@ -5,7 +5,7 @@ namespace App\Classes\FormFieldValidationRuleFilamentBuilderBlocks;
  *
  * Author:      Martin Shaw (developer@martinshaw.co)
  * Created:     2025-11-02T12:23:52.717Z
- * Modified:     2025-11-02T12:55:35.399Z
+ * Modified:     2025-11-04T09:37:05.462Z
  * File Name:   BaseFormFieldValidationRuleFilamentBuilderBlock.php
  *
  * Description: description
@@ -14,6 +14,12 @@ use Filament\Forms\Components\Builder\Block;
 
 abstract class BaseFormFieldValidationRuleFilamentBuilderBlock
 {
+    /**
+     * TODO: When we use an enum for validation rules, we can remove this method.
+     * @return string Should match name of the Filament builder block and Laravel validation rule.
+     */
+    abstract public static function getValidationRuleName(): string;
+
     /**
      * @return Block
      */

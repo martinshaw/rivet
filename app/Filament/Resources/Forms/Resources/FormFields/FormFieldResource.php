@@ -11,6 +11,7 @@ use App\Filament\Resources\Forms\Resources\FormFields\Schemas\FormFieldInfolist;
 use App\Filament\Resources\Forms\Resources\FormFields\Tables\FormFieldsTable;
 use App\Models\FormField;
 use BackedEnum;
+use Filament\Resources\ParentResourceRegistration;
 use Filament\Resources\Resource;
 use Filament\Schemas\Schema;
 use Filament\Support\Icons\Heroicon;
@@ -24,7 +25,14 @@ class FormFieldResource extends Resource
 
     protected static string|BackedEnum|null $navigationIcon = Heroicon::OutlinedRectangleStack;
 
-    protected static ?string $parentResource = FormResource::class;
+    // protected static ?string $parentResource = FormResource::class;
+
+    public static function getParentResourceRegistration(): ?ParentResourceRegistration
+    {
+        return FormResource::asParent()
+            ->relationship('fields')
+            ->inverseRelationship('form');
+    }
 
     protected static ?string $recordTitleAttribute = 'name';
 

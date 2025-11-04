@@ -45,6 +45,8 @@ class FormField extends Model
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
+            // We should use underscores because they are easier to use as keys in Javascript objects
+            ->usingSeparator('_')
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug')
             ->startSlugSuffixFrom(2)

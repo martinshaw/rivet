@@ -20,6 +20,11 @@ use Filament\Infolists\Components\TextEntry;
 
 class AcceptedFormFieldValidationRuleFilamentBuilderBlock extends BaseFormFieldValidationRuleFilamentBuilderBlock
 {
+    public static function getValidationRuleName(): string
+    {
+        return 'accepted_if';
+    }
+
     /**
      * @return Block
      */

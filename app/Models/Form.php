@@ -30,12 +30,18 @@ class Form extends Model
         'enabled_for_first_time_at' => 'datetime',
     ];
 
+    protected $with = [
+        'fields',
+    ];
+
     /**
      * Get the options for generating the slug.
      */
     public function getSlugOptions() : SlugOptions
     {
         return SlugOptions::create()
+            // We should use underscores because they are easier to use as keys in Javascript objects
+            ->usingSeparator('_')
             ->generateSlugsFrom('name')
             ->saveSlugsTo('slug')
             ->startSlugSuffixFrom(2)

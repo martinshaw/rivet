@@ -20,6 +20,11 @@ use App\Classes\FormFieldValidationRuleFilamentBuilderBlocks\BaseFormFieldValida
 
 class DeclinedIfFormFieldValidationRuleFilamentBuilderBlock extends BaseFormFieldValidationRuleFilamentBuilderBlock
 {
+    public static function getValidationRuleName(): string
+    {
+        return 'declined_if';
+    }
+
     /**
      * @return Block
      */
