@@ -1,6 +1,7 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "martinshaw/rivet",
+    "version": "0.0.1",
     "type": "library",
     "description": "Generate simple, fast and powerful CMS functionality for your Laravel application  ⌁  Pages - Forms - Articles - Data",
     "keywords": [
