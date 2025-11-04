@@ -1,13 +1,14 @@
 {
     "$schema": "https://getcomposer.org/schema.json",
     "name": "martinshaw/rivet",
-    "type": "project",
-    "description": "Pages - Forms - Articles; a simple yet powerful free self-hostable CMS platform",
+    "type": "library",
+    "description": "Pages - Forms - Articles; adds simple and powerful CMS functionality to your Laravel application",
     "keywords": [
         "laravel",
         "framework",
         "cms",
-        "content"
+        "content",
+        "package",
     ],
     "require": {
         "php": "^8.2",
