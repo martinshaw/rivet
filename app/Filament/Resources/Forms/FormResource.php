@@ -18,6 +18,7 @@ use App\Filament\Resources\Forms\Tables\FormsTable;
 use Illuminate\Database\Eloquent\SoftDeletingScope;
 use App\Filament\Resources\Forms\Schemas\FormInfolist;
 use App\Filament\Resources\Forms\Pages\ManageFormFormFields;
+use App\Filament\Resources\Forms\RelationManagers\ResponsesRelationManager;
 
 class FormResource extends Resource
 {
@@ -45,7 +46,7 @@ class FormResource extends Resource
     public static function getRelations(): array
     {
         return [
-            //
+            ResponsesRelationManager::class,
         ];
     }
 
